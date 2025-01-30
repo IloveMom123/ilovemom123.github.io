@@ -3,12 +3,13 @@
 <html lang="en">
 
 <h1> Choose a page!
-  <head>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
 	<title> Main </title>
 	<style>
 		.button-class {
 			background-color: #4CAF50;
-			/* Green */
 			border: none;
 			color: white;
 			padding: 10px 20px;
@@ -21,109 +22,77 @@
 			border-radius: 4px;
 		}
 	</style>
-</head>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> </head>
 <body>
-	<a href="https://ilovemom123.github.io/tifytwit/" class="button-class">
-      Tifytwit - Search</a>
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>  <!-- Add your reCAPTCHA widget here -->
+	<a href="#" id="tifytwitButton" class="button-class">Tifytwit - Search</a>  <!-- Add id to button -->
+    <!-- Add other buttons with similar IDs -->
+    <script>
+       document.getElementById('tifytwitButton').addEventListener('click', function() {
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+    alert('Please complete the reCAPTCHA.');
+  } else {
+    //Send the token to the server for verification
+    fetch('/verifyRecaptcha', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'recaptchaResponse': response })
+    }).then(response => response.json())
+    .then(data => {
+      if(data.success){
+          window.location.href = "https://ilovemom123.github.io/flash-tetris/";
+      } else {
+        alert('reCAPTCHA verification failed. Please try again.');
+      }
+    }).catch(error => {
+      alert('An error occurred during reCAPTCHA verification.');
+      console.error('Error:', error);
+    });
+
+  }
+});
+ document.getElementById('flashtetrisButton').addEventListener('click', function() {
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+    alert('Please complete the reCAPTCHA.');
+  } else {
+    //Send the token to the server for verification
+    fetch('/verifyRecaptcha', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'recaptchaResponse': response })
+    }).then(response => response.json())
+    .then(data => {
+      if(data.success){
+          window.location.href = "https://ilovemom123.github.io/flash-tetris/";
+      } else {
+        alert('reCAPTCHA verification failed. Please try again.');
+      }
+    }).catch(error => {
+      alert('An error occurred during reCAPTCHA verification.');
+      console.error('Error:', error);
+    });
+
+  }
+});
+
+    </script>
 </body>
-
-</html> 
-
-<!--index.html-->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<style>
-		.button-class {
-			background-color: #4CAF50;
-			/* Green */
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 4px;
-		}
-	</style>
-</head>
-
-<body>
-
-  <!--index.html-->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<style>
-		.button-class {
-			background-color: #4CAF50;
-			/* Green */
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 4px;
-		}
-	</style>
-</head>
-
-<body>
-	<a href="https://ilovemom123.github.io/chrome-dino-unblocked/" class="button-class">
-      Chrome Dino Unblocked</a>
-</body>
-
 </html>
-
-  <!--index.html-->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<style>
-		.button-class {
-			background-color: #4CAF50;
-			/* Green */
-			border: none;
-			color: white;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 4px;
-		}
-	</style>
-</head>
 
 	
-
-<body>
-	<a href="https://ilovemom123.github.io/flash-tetris/" class="button-class">
-      Flash Tetris</a>
-</body>
-
-	<!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+	<title> Main </title>
 	<style>
 		.button-class {
 			background-color: #4CAF50;
-			/* Green */
 			border: none;
 			color: white;
 			padding: 10px 20px;
@@ -136,17 +105,160 @@
 			border-radius: 4px;
 		}
 	</style>
-</head>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> </head>
 <body>
-	<a href="https://ilovemom123.github.io/tifytwit/images.html" class="button-class">
-      Tifytwit - Image Search</a>
-</body>
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>  <!-- Add your reCAPTCHA widget here -->
+	<a href="#" id="chromedinoButton" class="button-class">Chrome Dino Unblocked</a>  <!-- Add id to button -->
+    <!-- Add other buttons with similar IDs -->
+    <script>
+       document.getElementById('chromedinoButton').addEventListener('click', function() {
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+    alert('Please complete the reCAPTCHA.');
+  } else {
+    //Send the token to the server for verification
+    fetch('/verifyRecaptcha', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'recaptchaResponse': response })
+    }).then(response => response.json())
+    .then(data => {
+      if(data.success){
+          window.location.href = "https://ilovemom123.github.io/chrome-dino-unblocked/";
+      } else {
+        alert('reCAPTCHA verification failed. Please try again.');
+      }
+    }).catch(error => {
+      alert('An error occurred during reCAPTCHA verification.');
+      console.error('Error:', error);
+    });
 
+  }
+});
+
+    </script>
+</body>
 </html>
 
 
-		<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Main </title>
+	<style>
+		.button-class {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+	</style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> </head>
+<body>
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>  <!-- Add your reCAPTCHA widget here -->
+	<a href="#" id="flashtetrisButton" class="button-class">Flash Tetris</a>  <!-- Add id to button -->
+    <!-- Add other buttons with similar IDs -->
+    <script>
+   document.getElementById('flashtetrisButton').addEventListener('click', function() {
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+    alert('Please complete the reCAPTCHA.');
+  } else {
+    //Send the token to the server for verification
+    fetch('/verifyRecaptcha', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'recaptchaResponse': response })
+    }).then(response => response.json())
+    .then(data => {
+      if(data.success){
+          window.location.href = "https://ilovemom123.github.io/flash-tetris/";
+      } else {
+        alert('reCAPTCHA verification failed. Please try again.');
+      }
+    }).catch(error => {
+      alert('An error occurred during reCAPTCHA verification.');
+      console.error('Error:', error);
+    });
+
+  }
+});
+
+
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Main </title>
+	<style>
+		.button-class {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+	</style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> </head>
+<body>
+    <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>  <!-- Add your reCAPTCHA widget here -->
+	<a href="#" id="tifytwitimageButton" class="button-class">Tifytwit - Images</a>  <!-- Add id to button -->
+    <!-- Add other buttons with similar IDs -->
+    <script>
+       document.getElementById('tifytwitimageButton').addEventListener('click', function() {
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+    alert('Please complete the reCAPTCHA.');
+  } else {
+    //Send the token to the server for verification
+    fetch('/verifyRecaptcha', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'recaptchaResponse': response })
+    }).then(response => response.json())
+    .then(data => {
+      if(data.success){
+          window.location.href = "https://ilovemom123.github.io/tifytwit/";
+      } else {
+        alert('reCAPTCHA verification failed. Please try again.');
+      }
+    }).catch(error => {
+      alert('An error occurred during reCAPTCHA verification.');
+      console.error('Error:', error);
+    });
+
+  }
+});
+
+    </script>
+</body>
+</html>
+
+
+<!--index.html-->
 <!DOCTYPE html>
 <html lang="en">
 
