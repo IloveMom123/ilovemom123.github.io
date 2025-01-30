@@ -50,36 +50,7 @@
     }).catch(error => {
       alert('An error occurred during reCAPTCHA verification.');
       console.error('Error:', error);
-    });
-
-  }
-});
- document.getElementById('tifytwitButton').addEventListener('click', function() {
-  var response = grecaptcha.getResponse();
-  if (response.length === 0) {
-    alert('Please complete the reCAPTCHA.');
-  } else {
-    //Send the token to the server for verification
-    fetch('/verifyRecaptcha', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ 'recaptchaResponse': response })
-    }).then(response => response.json())
-    .then(data => {
-      if(data.success){
-          window.location.href = "https://ilovemom123.github.io/tifytwit/";
-      } else {
-        alert('reCAPTCHA verification failed. Please try again.');
-      }
-    }).catch(error => {
-      alert('An error occurred during reCAPTCHA verification.');
-      console.error('Error:', error);
-    });
-
-  }
-});
+   
 
     </script>
 </body>
