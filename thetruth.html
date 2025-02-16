@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Sans Text</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        .black-bold {
+            font-weight: bold;
+            color: black;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease-in-out; /* Smooth fade */
+        }
+
+        .black-bold.show {
+            opacity: 1; /* Fully visible */
+        }
+    </style>
+</head>
+<body>
+
+    <p>This is some <span id="changingWord" class="black-bold">text</span> with bold words in Comic Sans.</p>
+
+    <script>
+        const changingWord = document.getElementById("changingWord");
+        const words = ["Hi,", "I probably know why you're here.", "There is no fun with computers in school.", "But at home everything is blocked.", "There are some websites that are not blocked yet,", "and some that are not.", "Nobody really knows what Github Pages are,", "so I'm expecting this website to stay secret.", "See you sometime later."]; // Array of words
+        let currentWordIndex = 0;
+
+        function changeWord() {
+            changingWord.classList.remove("show"); // Fade out
+
+            setTimeout(() => {
+                changingWord.textContent = words[currentWordIndex]; // Change the word
+                changingWord.classList.add("show"); // Fade in
+                currentWordIndex = (currentWordIndex + 1) % words.length; // Cycle through words
+            }, 500); // Delay to match fade-out time
+        }
+
+        setInterval(changeWord, 2000); // Change every 2 seconds
+    </script>
+
+</body>
+</html>
