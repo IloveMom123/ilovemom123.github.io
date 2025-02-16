@@ -7,24 +7,26 @@
     <style>
         body {
             font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 2em; /* Increased font size */
+            display: flex; /* Center the text */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            margin: 0; /* Remove default margins */
         }
-
         .black-bold {
             font-weight: bold;
             color: black;
             opacity: 0; /* Initially hidden */
             transition: opacity 0.5s ease-in-out; /* Smooth fade */
         }
-
         .black-bold.show {
             opacity: 1; /* Fully visible */
         }
     </style>
 </head>
 <body>
-
     <p>‎ <span id="changingWord" class="black-bold">text</span>‎ </p>
-
     <script>
         const changingWord = document.getElementById("changingWord");
         const words = ["Hi,", "I probably know why you're here.", "There is no fun with computers in school.", "But at home everything is blocked.", "There are some websites that are not blocked yet,", "and some that are not.", "Nobody really knows what Github Pages are,", "so I'm expecting this website to stay secret.", "See you sometime later."]; // Array of words
@@ -32,7 +34,6 @@
 
         function changeWord() {
             changingWord.classList.remove("show"); // Fade out
-
             setTimeout(() => {
                 changingWord.textContent = words[currentWordIndex]; // Change the word
                 changingWord.classList.add("show"); // Fade in
@@ -42,6 +43,5 @@
 
         setInterval(changeWord, 2000); // Change every 2 seconds
     </script>
-
 </body>
 </html>
