@@ -7,21 +7,21 @@
     <style>
         body {
             font-family: "Comic Sans MS", cursive, sans-serif;
-            font-size: 2em; /* Increased font size */
-            display: flex; /* Center the text */
+            font-size: 2em;
+            display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ensure full viewport height */
-            margin: 0; /* Remove default margins */
+            min-height: 100vh;
+            margin: 0;
         }
         .black-bold {
             font-weight: bold;
             color: black;
-            opacity: 0; /* Initially hidden */
-            transition: opacity 0.5s ease-in-out; /* Smooth fade */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
         .black-bold.show {
-            opacity: 1; /* Fully visible */
+            opacity: 1;
         }
     </style>
 </head>
@@ -29,19 +29,27 @@
     <p>‎ <span id="changingWord" class="black-bold">text</span>‎ </p>
     <script>
         const changingWord = document.getElementById("changingWord");
-        const words = ["Hi,", "I probably know why you're here.", "There is no fun with computers in school.", "But at home everything is blocked.", "There are some websites that are not blocked yet,", "and some that are not.", "Nobody really knows what Github Pages are,", "so I'm expecting this website to stay secret.", "See you sometime later."]; // Array of words
+        const words = ["Hi,", "I probably know why you're here.", "There is no fun with computers in school.", "But at home everything is blocked.", "There are some websites that are not blocked yet,", "and some that are not.", "Nobody really knows what Github Pages are,", "so I'm expecting this website to stay secret.", "See you sometime later."];
         let currentWordIndex = 0;
+        let cycleCount = 0; // Keep track of cycles
 
         function changeWord() {
-            changingWord.classList.remove("show"); // Fade out
+            changingWord.classList.remove("show");
             setTimeout(() => {
-                changingWord.textContent = words[currentWordIndex]; // Change the word
-                changingWord.classList.add("show"); // Fade in
-                currentWordIndex = (currentWordIndex + 1) % words.length; // Cycle through words
-            }, 500); // Delay to match fade-out time
+                changingWord.textContent = words[currentWordIndex];
+                changingWord.classList.add("show");
+                currentWordIndex = (currentWordIndex + 1) % words.length;
+
+                if (currentWordIndex === 0) { // Check if a full cycle has completed
+                    cycleCount++;
+                    if (cycleCount === 1) { // Redirect after the FIRST cycle
+                        window.location.href = "https://ilovemom123.github.io"; // Replace with your URL
+                    }
+                }
+            }, 500);
         }
 
-        setInterval(changeWord, 2000); // Change every 2 seconds
+        setInterval(changeWord, 2018);
     </script>
 </body>
 </html>
