@@ -323,6 +323,79 @@ body  {
 </head>
 <body>
 
+	<a href="https://ilovemom123.github.io/thetruth" class="btn-glitch-fill">
+  <span class="text">Why is bro doing this</span><span class="text-decoration"> </span><span class="decoration">‎ →</span>
+</a>
+
+<style>
+.btn-glitch-fill {
+  position: relative;
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  text-decoration: none;
+  color: #fff; /* Default text color (white) */
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #fff; /* White border */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Hide overflowing glitch effect */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+.btn-glitch-fill:hover {
+  color: #f00; /* Green text on hover */
+  border-color: #f00; /* Green border on hover */
+}
+
+.btn-glitch-fill .text {
+  position: relative;
+  z-index: 2; /* Ensure text is above the glitch effect */
+}
+
+.btn-glitch-fill .decoration {
+  position: relative;
+  z-index: 2; /* Ensure decoration is above the glitch effect */
+  margin-left: 5px; /* Add some space between text and arrow */
+}
+
+
+/* Glitch Effect (Optional - Add if you want the glitch) */
+.btn-glitch-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Subtle white overlay */
+  mix-blend-mode: overlay; /* Blend mode for glitch effect */
+  pointer-events: none; /* Allow clicks to pass through overlay */
+  animation: glitch 0.7s infinite linear; /* Glitch animation */
+}
+
+@keyframes glitch {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(10px, -5px); }
+  75% { transform: translate(-5px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Dark Mode Specific Styles */
+body.dark-mode .btn-glitch-fill { /* Target the button when body has class "dark-mode" */
+  color: #ddd; /* Lighter text color in dark mode */
+  border-color: #555; /* Darker border color in dark mode */
+}
+
+body.dark-mode .btn-glitch-fill:hover {
+  color: #0f0; /* Green text on hover (same as light mode) */
+  border-color: #0f0; /* Green border on hover (same as light mode) */
+}
+
+body.dark-mode .btn-glitch-fill::before {
+  background: rgba(0, 0, 0, 0.2); /* Darker overlay for glitch in dark mode */
+}
+</style>
+
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5862055996831447"
      crossorigin="anonymous"></script>
 	
